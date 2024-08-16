@@ -95,14 +95,14 @@ Environment Configuration for Android:
 
 10. # Another commands:- 
     - Get appActivity in command line 
-       _a._ **Windows** --> _adb shell dumpsys package <packageName> | findstr /i activity_ 
-       _b._ **Unix/Linux** --> _adb shell dumpsys package <packageName> | grep -i activity_ 
+       - _a._ **Windows** --> _adb shell dumpsys package <packageName> | findstr /i activity_ 
+       - _b._ **Unix/Linux** --> _adb shell dumpsys package <packageName> | grep -i activity_ 
     ```OR```
       - Get appPackage and appActivity in command line 
-         _a._ **Windows**
-            Step1: search cmd --> click run as administration 
-            Step2: enter _**adb devices**_ 
-            Step3: _**adb shell**_ 
-            Step4: _**dumpsys window windows | grep –E 'mTopActivityComponent'**_ 
+         - _a._ **Windows**
+            - Step1: search cmd --> click run as administration 
+            - Step2: enter _**adb devices**_ 
+            - Step3: _**adb shell**_ 
+            - Step4: _**dumpsys window windows | grep –E 'mTopActivityComponent'**_ 
 
  
