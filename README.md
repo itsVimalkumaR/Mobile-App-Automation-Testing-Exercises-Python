@@ -87,10 +87,10 @@ Environment Configuration for Android:
 9. # Connecting with real android device 
     - **Note:** On some devices, the Developer options screen might be located or named differently.
     - Click the  link and follow those steps [Configure on-device developer options](https://developer.android.com/studio/debug/dev-options#enable)
-    - Download Vysor
+    - Download [Vysor](https://www.vysor.io/download/?return=https%3A%2F%2Fwww.vysor.io%2F)
     - Double click the Vysor-win-5.0.7.exe file and if device is connected your device name is visible 
     - Open Command Prompt > enter adb devices > It shown List of devices attached and device name 
-    - Create a Python project 
+    - [Create a Python project](https://www.jetbrains.com/help/pycharm/creating-empty-project.html#virtualenv) 
     - File > Settings > Search Python Interpreter > click + icon > Search Appium-Python-Client and select > click Install Package button > close > Apply and OK 
 
 10. # Another commands:- 
