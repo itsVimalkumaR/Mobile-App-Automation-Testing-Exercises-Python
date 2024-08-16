@@ -41,13 +41,13 @@ Set the JAVA_HOME variable via the command line
 
 If you would prefer to set the JAVA_HOME (or JRE_HOME) variable via the command line: 
 
-Open Command Prompt (make sure you Run as administrator so you're able to add a system environment variable). 
+Open the command prompt (make sure you run it as administrator so you can add a system environment variable). 
 
 Set the value of the environment variable to your JDK (or JRE) installation path as follows: 
 
 setx /m JAVA_HOME "C:\Program Files\Java\jdk11.0.17.8" 
 
-Restart Command Prompt to reload the environment variables then use the following command to check the it's been added correctly.  
+Restart Command Prompt to reload the environment variables then use the following command to check that it's been added correctly.  
 
 echo %JAVA_HOME% 
 
@@ -55,13 +55,13 @@ You should see the path to your JDK (or JRE) installation.
 
 Download and install Android Studio 
 
-Install Android Studio Steps to Setup android studio 
+Install Android Studio Steps to Setup Android Studio 
 
 Keep all the settings as default including SDK 
 
-Copy the SDK folder path from system variable C:\Users\YourUserName\AppData\Local\Android\SDK 
+Copy the SDK folder path from the system variable C:\Users\YourUserName\AppData\Local\Android\SDK 
 
-Right click on This PC -> Properties 
+Right-click on This PC -> Properties 
 
 On the left pane select "Advanced System Settings" 
 
