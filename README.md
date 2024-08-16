@@ -97,8 +97,10 @@ Environment Configuration for Android:
     - Get appActivity in command line 
        - _a._ **Windows** --> _adb shell dumpsys package <packageName> | findstr /i activity_ 
        - _b._ **Unix/Linux** --> _adb shell dumpsys package <packageName> | grep -i activity_ 
+      
     ```OR```
-      - Get appPackage and appActivity in command line 
+      
+    - Get appPackage and appActivity in command line 
          - _a._ **Windows**
             - Step1: search cmd --> click run as administration 
             - Step2: enter _**adb devices**_ 
