@@ -19,10 +19,16 @@ caps = {
 
 url = 'http://127.0.0.1:4723/wd/hub'
 
-# Setup driver
-options = AppiumOptions().load_capabilities(caps)
-driver = webdriver.Remote(url, desired_capabilities=options)
-# driver = webdriver.Remote(url, desired_capabilities=caps)
+# options = AppiumOptions()
+# options.load_capabilities(caps)
+
+# Create a new session
+print("Creating Appium driver...")
+driver = webdriver.Remote(command_executor=url, desired_capabilities=caps)
+
+# Wait for the app to load
+print("Waiting for the app to load...")
+time.sleep(5)
 
 wait = WebDriverWait(driver, 20, poll_frequency=1,
                      ignored_exceptions=[NoSuchElementException, TimeoutException, WebDriverException])
