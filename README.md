@@ -1,155 +1,246 @@
-# Mobile-App-Automation-Testing-Exercises-Python
+# 📱 Mobile App Automation Testing Exercises (Python)
 
-## Project Overview
-This repository contains a collection of **mobile automation testing exercises** developed using **Python**.  
-The goal of this project is to **practice and master automation testing for Android and iOS mobile applications** using tools like **Appium** and **Selenium** (for hybrid apps).
+## 📌 Project Overview
+This repository contains **mobile application automation testing exercises** implemented using **Python and Appium**.  
+The project is designed to demonstrate **real-world mobile test automation practices**, focusing on maintainable test design, reusable components, and structured execution.
 
-The exercises focus on building the skills needed to design, script, and execute test automation for mobile applications efficiently.
-
----
-
-## Tech Stack
-| Component | Description |
-|------------|--------------|
-| **Language** | Python |
-| **Automation Framework** | Appium |
-| **Supported Platforms** | Android & iOS |
-| **Testing Framework** | unittest / pytest |
-| **Automation Type** | Mobile (Native, Hybrid, WebView) |
-| **Design Pattern** | Page Object Model (POM) |
-| **IDE Used** | PyCharm / VS Code |
-| **Build Tool** | Manual / Non-Maven |
+It is suitable for:
+- QA Engineers transitioning to automation
+- SDETs practicing mobile automation
+- Learning Appium with Python using industry patterns
 
 ---
 
-## Folder Structure
+## 🎯 Objectives
+- Automate common mobile application workflows
+- Apply Page Object Model (POM) design pattern
+- Validate UI behavior and navigation
+- Capture failures with screenshots
+- Generate execution reports
+- Understand mobile automation setup and execution flow
+
+---
+
+## 🧰 Tech Stack
+
+### Core Technologies
+- **Language:** Python 3.x
+- **Mobile Automation:** Appium
+- **Test Framework:** Pytest / unittest
+- **Design Pattern:** Page Object Model (POM)
+
+### Supporting Tools
+- Selenium WebDriver
+- Android Emulator / Real Device
+- Appium Server
+- PyCharm / VS Code
+
+---
+
+## 📁 Project Structure
+
+```text
+Mobile-App-Automation-Testing-Exercises-Python/
+├── tests/                   # Test cases
+│   ├── test_login.py
+│   ├── test_navigation.py
+│   └── test_settings.py
+├── pages/                   # Page Object classes
+│   ├── login_page.py
+│   ├── home_page.py
+│   └── settings_page.py
+├── utils/                   # Utilities and helpers
+│   ├── driver_setup.py
+│   ├── config_reader.py
+│   └── wait_utils.py
+├── data/                    # Test data
+│   ├── credentials.json
+│   └── testdata.csv
+├── reports/                 # Execution reports
+├── screenshots/             # Failure screenshots
+├── requirements.txt         # Python dependencies
+└── README.md
+```
+
+---
+
+## ⚙️ Installation & Setup
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/itsVimalkumaR/Mobile-App-Automation-Testing-Exercises-Python.git
+cd Mobile-App-Automation-Testing-Exercises-Python
+```
+
+### 2️⃣ Install Python Dependencies
+Ensure Python 3.8+ is installed.
+
+```bash
+pip install -r requirements.txt
+```
+
+Typical dependencies include:
+- appium-python-client
+- selenium
+- pytest
+- pytest-html
+
+### 3️⃣ Install Appium
+Install Appium globally:
+
+```bash
+npm install -g appium
+```
+
+(Optional) Install Appium Desktop for inspecting mobile elements.
+
+### 4️⃣ Device / Emulator Setup
+- Install Android SDK
+- Set `ANDROID_HOME` environment variable
+- Start Android emulator or connect a real device
+- Enable USB debugging (for real devices)
+
+---
+
+## 🧪 Test Execution
+### Start Appium Server
+
+```bash
+appium
+```
+
+### Run Tests Using Pytest
+```bash
+pytest -v -s tests/ --html=reports/report.html
+```
+
+### Run Using unittest
+```bash
+python -m unittest discover -s tests
+```
+
+---
+
+## 🔄 Test Execution Flow
+1. Appium server starts
+2. Device or emulator is detected
+3. Driver session is created
+4. Test cases execute via Page Objects
+5. Failures capture screenshots
+6. Reports are generated
+
+---
+
+## 📸🎥 Demo & Screenshots
+> Add actual files inside the `screenshots/` folder
+
+### Automation Execution
+![Execution Demo](screenshots/mobile_test_execution.gif)
+
+### Test Report
+![HTML Report](screenshots/test_report.png)
+
+### Failure Screenshot
+![Failure Screenshot](screenshots/failure_example.png)
+
+---
+
+## 📌 Recommended GIF Tools
+- **Windows:** ScreenToGif
+- **macOS:** Kap
+- **Linux:** Peek
+
+---
+
+## 🔁 CI/CD Integration (GitHub Actions)
+This project supports automated execution via** GitHub Actions** for continuous validation.
+
+**Workflow Capabilities**
+- Trigger on push & pull request
+- Setup Python environment
+- Install dependencies
+- Execute automation tests
+  
+**Sample Workflow File**
+Create:
+```bash
+.github/workflows/mobile-automation.yml
+```
 
 ```yaml
-Mobile-App-Automation-Testing-Exercises-Python/
-│
-├── tests/                   # Test cases for different mobile modules
-│ ├── test_login.py
-│ ├── test_registration.py
-│ └── test_settings.py
-│
-├── pages/                   # Page Object Model (POM) classes
-│ ├── login_page.py
-│ ├── registration_page.py
-│ └── settings_page.py
-│
-├── utils/                   # Utility classes (drivers, waits, config)
-│ ├── driver_setup.py
-│ ├── config_reader.py
-│ └── wait_utils.py
-│
-├── data/                    # Test data files
-│ ├── credentials.json
-│ └── testdata.xlsx
-│
-├── reports/                 # Execution reports (pytest-html, allure)
-│
-├── screenshots/             # Captured screenshots on test failure
-│
-├── requirements.txt         # Python dependencies
-│
-└── README.md                # Project documentation
+name: Mobile Automation Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Execute Tests
+        run: |
+          pytest -v tests/
 ```
+
+> ℹ️ Mobile tests are typically run on **self-hosted runners** or **cloud device farms**.
 
 ---
 
-## Setup Instructions
+## 🧪 Test Coverage
+Currently covers:
+- Login and authentication flows
+- Navigation validations
+- Input field validation
+- Positive and negative scenarios
+- Screenshot capture on failure
 
-### **1️. Prerequisites**
-- Install **Python 3.10+**
-- Install **Appium Server** (Desktop or via npm)
-- Install **Android SDK / Xcode** for device emulation
-- Set environment variables for: `ANDROID_HOME`, `JAVA_HOME`
+Planned enhancements:
+- Parallel execution
+- Cloud device execution
+- Android & iOS separation
+- CI report publishing
 
-### **2️. Install Dependencies**
-Run:
+---
 
+##🤝 Contribution Guidelines
+1. Fork the repository
+2. Create a feature branch
 ```bash
-  pip install -r requirements.txt
+git checkout -b feature/new-test
 ```
-
-### **3. Example `requirements.txt`**
-
-```css
-  appium-python-client
-  pytest
-  pytest-html
-  selenium
-  openpyxl
-```
+3. Follow existing project structure
+4. Avoid hard-coded test data
+5. Run tests before committing
+6. Raise a Pull Request with details
 
 ---
 
-## Run Test Cases
-
-**Using Pytest:**
-
-```bash
-  pytest -v -s tests/test_login.py --html=reports/report.html
-```
-
-**Using unittest:**
-
-```bash
-  python -m unittest discover -s tests
-```
-
----
-
-## Example Test Flow
-
-1. Launch Appium server
-
-2. Connect your Android/iOS device or emulator
-
-3. Update desired capabilities in `driver_setup.py`
-
-4. Run the tests via `pytest` or `unittest`
-
-5. View HTML report and screenshots for failed tests
-
----
-
-## Learning Objectives
-
-- Automate **native**, **hybrid**, and **webview** mobile applications
-
-- Implement **Page Object Model (POM)** for mobile testing
-
-- Use **Appium desired capabilities** effectively
-
-- Handle mobile gestures (tap, swipe, scroll)
-
-- Capture screenshots and generate reports
-
-- Build reusable utility classes for mobile automation
-
----
-
-## Sample Modules Automated
-
-- Login Flow
-
-- Registration Screen
-
-- Profile Update
-
-- Settings Page
-
-- Logout Functionality
-
----
-
-## Author
+## 👤 Author
 
 **Vimalkumar Murugesan**
 
-_Manual & Automation Tester_
+Senior Manual & Automation Test Engineer
 
-- Specialized in Web, API & Mobile Testing
-- [LinkedIn](https://www.linkedin.com/in/vimalkumar-m/) | [GitHub](https://github.com/itsVimalkumaR)
+🔗 [LinkedIn](https://www.linkedin.com/in/vimalkumar-m/)
 
+---
+
+## 📄 License
+
+This project is open-source and intended for learning and educational purposes.
